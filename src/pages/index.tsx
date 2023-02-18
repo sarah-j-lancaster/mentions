@@ -2,10 +2,17 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
+import { NextPage } from "next";
+import { getAllMentions } from "@/services/api/mentions";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+type HomeProps = {
+  mentions: any;
+};
+
+const Home: NextPage<HomeProps> = ({ mentions }) => {
+  console.log(mentions);
   return (
     <>
       <Head>
@@ -19,4 +26,11 @@ export default function Home() {
       </main>
     </>
   );
-}
+};
+
+Home.getInitialProps = async () => {
+  const mentions = await getAllMentions();
+  return { mentions };
+};
+
+export default Home;
