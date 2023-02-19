@@ -6,6 +6,7 @@ import { NextPage } from "next";
 import { getAllMentions } from "@/services/api/mentions";
 import { convertMentionsToViewModel } from "@/utils/utils";
 import { MentionCard } from "@/components/MentionCard/MentionCard";
+import Link from "next/link";
 
 const headingFont = Shrikhand({ weight: "400", preload: false });
 
@@ -33,13 +34,12 @@ const Home: NextPage<HomeProps> = ({ mentions }) => {
       <main className={styles.main}>
         <Image
           src={"/images/mention-img.png"}
-          alt="A woman holding a megaphone surronded by social media icons"
+          alt="Mini social media users border a giant computer"
           width={260}
           height={150}
           quality={100}
         />
         <h1 className={`${styles.title} ${headingFont.className}`}>Mentions</h1>
-
         <ul className={styles.grid}>
           {mentions.map((mention, index) => (
             <li key={`mention-${index}`}>
@@ -47,6 +47,14 @@ const Home: NextPage<HomeProps> = ({ mentions }) => {
             </li>
           ))}
         </ul>
+        <div className={styles.link}>
+          <a
+            href={`https://www.freepik.com/free-vector/tiny-people-customers-receive-messages-from-microblogging-service-microblog-platform-microblogging-market-microblog-marketing-service-concept-illustration_11669673.htm#query=mention%20social&position=23&from_view=search&track=ais`}
+          >
+            {`Image by vectorjuice`}
+          </a>
+          {` on Freepik`}
+        </div>
       </main>
     </>
   );
