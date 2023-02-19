@@ -1,6 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Deployed at:
+
+[https://mentions.vercel.app/](https://mentions.vercel.app/)
+
 ## Getting Started
+
+Create a .env file and add:
+BEARER_TOKEN=XXXXXXXXXXXX
 
 First, run the development server:
 
