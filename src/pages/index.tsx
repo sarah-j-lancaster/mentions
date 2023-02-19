@@ -11,6 +11,14 @@ type HomeProps = {
   mentions: any;
 };
 
+export type MentionViewModel = {
+  sourceType: "blogs" | "web" | "forums" | "twitter";
+  sourceName: string;
+  createdAt: string;
+  title: string;
+  description: string;
+};
+
 const Home: NextPage<HomeProps> = ({ mentions }) => {
   console.log(mentions);
   return (
