@@ -33,8 +33,8 @@ export const MentionCard = ({
       <Image
         src={imageMap[sourceType]}
         alt={`${sourceType} icon`}
-        width={50}
-        height={50}
+        width={40}
+        height={40}
       />
       <div className={styles.content}>
         <div className={styles.header}>
