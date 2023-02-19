@@ -1,13 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Quicksand } from "@next/font/google";
+import { Shrikhand } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import { NextPage } from "next";
 import { getAllMentions } from "@/services/api/mentions";
 import { convertMentionsToViewModel } from "@/utils/utils";
 import { MentionCard } from "@/components/MentionCard/MentionCard";
 
-const quicksand = Quicksand({ subsets: ["latin"] });
+const headingFont = Shrikhand({ weight: "400", preload: false });
 
 type HomeProps = {
   mentions: MentionViewModel[];
@@ -32,12 +32,13 @@ const Home: NextPage<HomeProps> = ({ mentions }) => {
       </Head>
       <main className={styles.main}>
         <Image
-          src={"/images/mention.png"}
+          src={"/images/mention-img.png"}
           alt="A woman holding a megaphone surronded by social media icons"
-          width={250}
+          width={260}
           height={150}
+          quality={100}
         />
-        <h1 className={`${styles.title} ${quicksand.className}`}>Mentions</h1>
+        <h1 className={`${styles.title} ${headingFont.className}`}>Mentions</h1>
 
         <ul className={styles.grid}>
           {mentions.map((mention, index) => (

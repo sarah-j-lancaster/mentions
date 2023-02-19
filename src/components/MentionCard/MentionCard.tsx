@@ -2,6 +2,7 @@ import { MentionViewModel } from "@/pages";
 import Image from "next/image";
 import styles from "../MentionCard/mention-card.module.css";
 import { Quicksand } from "@next/font/google";
+import Linkify from "linkify-react";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -19,6 +20,14 @@ export const MentionCard = ({
   description,
   createdAt,
 }: MentionViewModel) => {
+  const renderLink = ({ attributes, content }: any) => {
+    const { href, ...props } = attributes;
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+        {content}
+      </a>
+    );
+  };
   return (
     <div className={`${styles.container} ${quicksand.className}`}>
       <Image
@@ -33,7 +42,11 @@ export const MentionCard = ({
           <p>{createdAt}</p>
         </div>
         <h2 className={styles.title}>{title}</h2>
-        <p className={styles.description}>{description}</p>
+        <div className={styles.description}>
+          <Linkify as="p" options={{ render: renderLink }}>
+            {description}
+          </Linkify>
+        </div>
       </div>
     </div>
   );
