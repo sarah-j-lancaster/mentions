@@ -6,7 +6,6 @@ import { NextPage } from "next";
 import { getAllMentions } from "@/services/api/mentions";
 import { convertMentionsToViewModel } from "@/utils/utils";
 import { MentionCard } from "@/components/MentionCard/MentionCard";
-import Link from "next/link";
 
 const headingFont = Shrikhand({ weight: "400", preload: false });
 
@@ -38,6 +37,7 @@ const Home: NextPage<HomeProps> = ({ mentions }) => {
           width={260}
           height={150}
           quality={100}
+          priority
         />
         <h1 className={`${styles.title} ${headingFont.className}`}>Mentions</h1>
         <ul className={styles.grid}>
