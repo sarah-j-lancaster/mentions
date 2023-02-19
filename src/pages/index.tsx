@@ -4,11 +4,13 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import { NextPage } from "next";
 import { getAllMentions } from "@/services/api/mentions";
+import { convertMentionsToViewModel } from "@/utils/utils";
+import { MentionCard } from "@/components/MentionCard/MentionCard";
 
 const inter = Inter({ subsets: ["latin"] });
 
 type HomeProps = {
-  mentions: any;
+  mentions: MentionViewModel[];
 };
 
 export type MentionViewModel = {
@@ -31,13 +33,21 @@ const Home: NextPage<HomeProps> = ({ mentions }) => {
       </Head>
       <main className={styles.main}>
         <h1 className={inter.className}>Mentions</h1>
+        <ul>
+          {mentions.map((mention, index) => (
+            <li key={`mention-${index}`}>
+              <MentionCard {...mention} />
+            </li>
+          ))}
+        </ul>
       </main>
     </>
   );
 };
 
 Home.getInitialProps = async () => {
-  const mentions = await getAllMentions();
+  const mentionsData = await getAllMentions();
+  const mentions = convertMentionsToViewModel(mentionsData.mentions);
   return { mentions };
 };
 
