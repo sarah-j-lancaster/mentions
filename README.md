@@ -34,3 +34,4 @@ npm run test
   - Pagination
 - Maybe link off to the mention in all cases? Ideally the card would be the clickable component but most descriptions contained links so I decided against it.
 - Could use SASS to do media queries, currently decided against it as there is minimal styling
+- Error handling for mentions call - maybe load app with error message and try again button?
