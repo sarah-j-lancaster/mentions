@@ -64,7 +64,7 @@ describe("Mention view model", () => {
       createdAt: "18 Feb",
       description:
         "View tweet at https://twitter.com/i/web/status/1626946180667113473",
-      sourceName: "Twitter.com",
+      sourceName: "twitter.com",
       sourceType: "twitter",
       title: "You have been mentioned on twitter",
     },

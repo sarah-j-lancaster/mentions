@@ -1,5 +1,16 @@
 import { MentionViewModel } from "@/pages";
+import Image from "next/image";
 import styles from "../MentionCard/mention-card.module.css";
+import { Quicksand } from "@next/font/google";
+
+const quicksand = Quicksand({ subsets: ["latin"] });
+
+const imageMap: { [Key in MentionViewModel["sourceType"]]: string } = {
+  twitter: "/images/twitter.png",
+  forums: "/images/forum.png",
+  blogs: "/images/blog.png",
+  web: "/images/web.png",
+};
 
 export const MentionCard = ({
   sourceName,
@@ -9,9 +20,14 @@ export const MentionCard = ({
   createdAt,
 }: MentionViewModel) => {
   return (
-    <div className={styles.container}>
-      <div>{sourceType}</div>
-      <div>
+    <div className={`${styles.container} ${quicksand.className}`}>
+      <Image
+        src={imageMap[sourceType]}
+        alt={`${sourceType} icon`}
+        width={50}
+        height={50}
+      />
+      <div className={styles.content}>
         <div className={styles.header}>
           <p>{sourceName}</p>
           <p>{createdAt}</p>

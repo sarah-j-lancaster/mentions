@@ -7,9 +7,19 @@
   min-height: 100vh;
 }
 
+.title {
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
+@media only screen and (min-width: 768px) {
   .grid {
+    display: grid;
     grid-template-columns: repeat(2, 50%);
   }
 }

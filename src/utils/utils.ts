@@ -46,7 +46,7 @@ export const convertMentionsToViewModel = (
 
       return {
         sourceType: source_type,
-        sourceName: "Twitter.com",
+        sourceName: "twitter.com",
         createdAt: formattedDate,
         title: "You have been mentioned on twitter",
         description: `View tweet at https://twitter.com/i/web/status/${id_str}`,

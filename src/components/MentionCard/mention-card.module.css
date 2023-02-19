@@ -1,9 +1,20 @@
 .container {
   display: flex;
+  gap: 12px;
+  border: 2px solid var(--color-light-blue);
+  border-radius: 10px;
+  padding: 8px;
+  width: 100%;
+  color: var(--color-dark-blue);
+  height: 100%;
+}
+.content {
+  flex: 1;
 }
 
 .header {
   display: flex;
+  justify-content: space-between;
 }
 
 .title {
@@ -11,6 +22,8 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-size: 20px;
+  margin-bottom: 8px;
 }
 
 .description {
