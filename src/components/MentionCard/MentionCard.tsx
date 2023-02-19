@@ -30,12 +30,9 @@ export const MentionCard = ({
   };
   return (
     <div className={`${styles.container} ${quicksand.className}`}>
-      <Image
-        src={imageMap[sourceType]}
-        alt={`${sourceType} icon`}
-        width={40}
-        height={40}
-      />
+      <div className={styles.image}>
+        <Image src={imageMap[sourceType]} alt={`${sourceType} icon`} fill />
+      </div>
       <div className={styles.content}>
         <div className={styles.header}>
           <p>{sourceName}</p>

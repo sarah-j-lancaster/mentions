@@ -26,7 +26,6 @@
   bottom: 20px;
 }
 
-/* Tablet and Smaller Desktop */
 @media only screen and (min-width: 768px) {
   .main {
     padding: 6rem;

@@ -9,7 +9,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 Create a .env file and add:
 BEARER_TOKEN=XXXXXXXXXXXX
 
-First, run the development server:
+Then you can run the development server:
 
 ```bash
 npm run dev
@@ -35,10 +35,11 @@ npm run test
 ## Future optimisations:
 
 - Data is not what I was expecting based off designs, mostly requires backend updates
-  - Make mention data consistent for twitter
-  - Add website image for photo
-  - Description auditing (doesn't seem right in most cases)
+  - Make mention data consistent for twitter - BE could query twitter API for tweet content and author name
+  - Add website image for photo thumbnail
+  - Description auditing (most are just links with no context)
   - Pagination
+  - "Match data" for highlighting in FE (algolia does it well as an example)
 - Maybe link off to the mention in all cases? Ideally the card would be the clickable component but most descriptions contained links so I decided against it.
-- Could use SASS to do media queries, currently decided against it as there is minimal styling
+- Could use SASS to do media queries, currently decided against it as there is very minimal CSS
 - Error handling for mentions call - maybe load app with error message and try again button?
